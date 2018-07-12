@@ -1,5 +1,13 @@
 # vue-assignment2-weather-app
 
+## User Stories
+
+[√] Responsive for any screen (desktop, laptop, tablet, phone)
+[√] Uses only Grid for main layout
+[√] Uses flexbox for positioning inside grid-items
+[√] All colors are used through CSS Variables
+[√] Deploy website to Netlify
+
 > A Vue.js project
 
 ## Build Setup

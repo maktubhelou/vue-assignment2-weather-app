@@ -1,9 +1,10 @@
 :root {
     --bgcolor: rgba(255, 208, 187, 0.753);
-    --left-top-font: 4vw;
-    --left-bottom-font: 4vw;
-    --right-top-font: 10vw;
-    --right-bottom-font: 4vw;
+    --fgcolor: rgba(25, 25, 25, 0);
+    --left-top-font: 5vw;
+    --left-bottom-font: 5vw;
+    --right-top-font: 12vw;
+    --right-bottom-font: 5vw;
 }
 
 html, body {
@@ -12,6 +13,7 @@ html, body {
     width: 100%;
     height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--fgcolor);
 }
 .grid {
     display: grid;
@@ -75,3 +77,4 @@ html, body {
     text-align: center;
     color: #2c3e50;
   }
+
