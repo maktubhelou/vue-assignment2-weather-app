@@ -44,7 +44,7 @@ export default {
         },
         location: {
           title: 'leftBottom',
-          content: 'Ho Chi Minh City, Vietnam'
+          content: ''
         },
         description: {
           title: 'rightBottom',
@@ -56,7 +56,7 @@ export default {
   },
   mounted () {
     let self = this
-    let api = 'http://api.openweathermap.org/data/2.5/find?q=Stockholm&units=metric&appid=dfe15a41201d660911d013203832e676'
+    let api = 'https://api.openweathermap.org/data/2.5/find?q=Stockholm&units=metric&appid=dfe15a41201d660911d013203832e676'
     fetch(api).then(function (response) {
       return response.json()
     }).then(function (result) {
