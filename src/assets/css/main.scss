@@ -1,10 +1,10 @@
 :root {
     --bgcolor: rgba(255, 208, 187, 0.753);
     --fgcolor: rgba(25, 25, 25, 0);
-    --left-top-font: 5vw;
-    --left-bottom-font: 5vw;
+    --left-top-font: 4vw;
+    --left-bottom-font: 4vw;
     --right-top-font: 12vw;
-    --right-bottom-font: 5vw;
+    --right-bottom-font: 4vw;
 }
 
 html, body {
@@ -18,7 +18,7 @@ html, body {
 .grid {
     display: grid;
     position: absolute;
-    grid-template: repeat(2, 1fr) / 1fr 2fr 1fr;
+    grid-template: repeat(2, 2fr) 1fr / 0.5fr 2fr 0.5fr;
     width: 100%;
     height: 100%;
     .tile {
@@ -29,6 +29,7 @@ html, body {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        text-align: left;
         grid-area: span 1 / span 1;
         font-size: 34px;
         font-size: var(--left-top-font);
@@ -48,6 +49,7 @@ html, body {
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
+        text-align: left;
         grid-area: span 1 / span 1;
         font-size: var(--left-bottom-font);
     }
@@ -65,8 +67,23 @@ html, body {
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+        text-align: right;
         grid-area: span 1 / span 1;
         font-size: var(--right-bottom-font);
+    }
+    .navBar {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        justify-content: center;
+        .navItem {
+            padding: 2vw;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 

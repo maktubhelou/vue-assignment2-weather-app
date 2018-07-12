@@ -1,6 +1,6 @@
 <template>
     <div :class="['tile', data.title]">
-        {{ data.content }}
+        {{ data.content.toLowerCase() }}
     </div>
 </template>
 
