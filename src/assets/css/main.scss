@@ -200,7 +200,8 @@ height: 100%;
     /* Sunny */
     &.clear {
         #Sun-Bright {
-            display: block
+            display: block;
+            box-shadow: 1px 1px 1px white;
         }
         .sky {
             fill: #70a4f2;
