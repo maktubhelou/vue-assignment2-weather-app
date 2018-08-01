@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     weatherStyles: function () {
-      const possibleConditions = ['clear', 'cloud', 'broken', 'rain', 'light', 'heavy', 'few', 'shower', 'haze', 'snow', 'fog', 'mist']
+      const possibleConditions = ['clear', 'cloud', 'broken', 'rain', 'light', 'heavy', 'few', 'shower', 'haze', 'snow', 'fog', 'mist', 'thunderstorm']
       let actualConditions = ['weather']
       const raw = this.tiles.weather.raw.toLowerCase()
       possibleConditions.forEach(function (item) {

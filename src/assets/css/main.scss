@@ -5,6 +5,8 @@
     --left-bottom-font: 4vw;
     --right-top-font: 10vw;
     --right-bottom-font: 4vw;
+    --sky: #9fbeee;
+    --stroke-color: #252525;
 }
 
 html, body {
@@ -105,6 +107,41 @@ html, body {
     color: #2c3e50;
   }
 
+.navItem {
+    margin: 0 2px;
+    a {
+        text-decoration: none;
+        transition: all 1s;
+        color: rgb(123, 123, 159);
+        font-size: minmax(12px, 2vw);
+    }
+    transition: all 1s;
+    padding: 1em;
+    &:hover {
+        padding: 1em;
+        color: #fff;
+        background-color: rgba(50, 8, 50, 0.5);
+        a {
+            color: #fff;
+        }
+    }
+}
+
+input,
+button {
+    font-size: 2em;
+    padding: .5em 2em;
+    border: 1px;
+}
+
+button {
+    cursor: pointer;
+    background-color: rgba(0,0,0,.1);
+    &:hover {
+        background-color: rgba(0,0,0,.5);
+    }
+}
+
 svg {
 width: 100%;
 height: 100%;
@@ -114,90 +151,60 @@ height: 100%;
 #Clouds-rainy,
 #Clouds-snowy,
 #Snow,
-#Sun-rainy,
-#Sun-snowy,
-#Lightning,
-#Sun-Bright,
 #Sun-Cloudy,
-#Sun-snow,
+#Sun-snowy,
 #Sun-rainy,
+#Sun-Bright,
+#Lightning,
+#Clouds-thunder,
 #Wind-cloudy,
-#Clouds-sunny, {
+#Clouds-sunny,
+#rain {
     display: none,
 }
 .weather {
-    .sky {
-        fill: #9fbeee;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke: var(--stroke-color);
+    .sky,
+    .window {
+        fill: var(--sky);
     }
-    .st0 {
-        fill: #d19f78;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .light-grass {
+        fill: #51b825;
     }
-    .st1 {
-        fill: #8ca57f;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .dark-grass {
+        fill: #345125;
     }
-    .st2 {
-        fill: #8aac94;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .tree-branches,
+    .bush {
+        fill: #093215;
     }
-    .st3 {
-        fill: #fcfbed;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .big-cloud,
+    .small-cloud,
+    .clouds {
+        fill: #fff;
     }
-    .st4 {
-        fill: #ecc5bb;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .tree-trunk {
+        fill: #622f03;
     }
-    .st5 {
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .roof {
+        fill: #871b00;
     }
-    .st6 {
-        fill: #ffffff;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .house {
+        fill: #f2c476;
     }
-    .st7 {
-        fill: none;
-        stroke: #000000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+    .door {
+        fill: #2f75de;
     }
-    /* Sunny */
+    .sun-inner {
+        fill: #ffaa00;
+    }
+    .sun-outer {
+        fill: #f2de7a;
+    }
     &.clear {
         #Sun-Bright {
             display: block;
@@ -219,7 +226,8 @@ height: 100%;
             stroke-linejoin: round;
             stroke-miterlimit: 10;
         }
-        .st1 {
+        .st1,
+        .ground {
             fill: #679e4a;
             stroke: #000000;
             stroke-width: 2;
@@ -227,7 +235,8 @@ height: 100%;
             stroke-linejoin: round;
             stroke-miterlimit: 10;
         }
-        .st2 {
+        .st2,
+        .light-ground {
             fill: #69af7e;
             stroke: #000000;
             stroke-width: 2;
@@ -275,7 +284,6 @@ height: 100%;
             stroke-miterlimit: 10;
         }
     }
-    /* Partly Cloudy */
     &.partly-cloudy {
         #Sun-Cloudy,
         #Clouds-cloudy,
@@ -357,85 +365,18 @@ height: 100%;
             stroke-miterlimit: 10;
         }
     }
-    /* Sunny with Few Clouds */
-    &.cloud {
+    &.cloud,
+    &.broken {
         #Sun-Bright,
         #Clouds-sunny {
-            display: block
+            display: block;
         }
-        .sky {
-            fill: #70a4f2;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st0 {
-            fill: #d5640d;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st1 {
-            fill: #679e4a;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st2 {
-            fill: #69af7e;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st3 {
-            fill: #fcfbed;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st4 {
-            fill: #f27e5f;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st5 {
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st6 {
-            fill: #ffffff;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st7 {
-            fill: none;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .small-cloud,
+        .clouds,
+        .big-cloud {
+            fill: #fff;
         }
     }
-    /* Snowy */
     &.snow {
         #Snow,
         #Sun-snowy,
@@ -444,51 +385,63 @@ height: 100%;
         }
         .sky {
             fill: rgb(136, 175, 206);
-            stroke: #000;
         }
-        .st1,
-        .st2,
-        .st3,
-        .st4,
-        .st6 {
+        .sun {
+            fill: rgba(255, 166, 31, 0.76);
+        }
+        .light-grass,
+        .tree-trunk {
         fill: #a0aca6;
-        stroke: #000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
         }
-        .st2,
-        .st3,
-        .st4,
-        .st6 {
+        .dark-grass,
+        .tree-branches,
+        .bush {
         fill: #b7dbe6;
         }
-        .snow {
+        .snow,
+        .small-cloud {
         fill: #fff;
         }
-        .st3,
-        .st4,
-        .st6 {
-        fill: #679e4a;
-        }
-        .st4,
-        .st6 {
-        fill: #686510;
+        .roof {
+            fill: rgba(198, 121, 121, 0.694);
         }
     }
-    /* Clouds and Rain */
     &.rain {
         #Sun-rainy,
+        #rain,
         #Clouds-rainy,
+        {
+            display: block
+        }
+        .sky {
+            fill: #5a87da; 
+        }
+        .sun
+        {
+            fill: #e18625;
+        }
+        .rain {
+            stroke: #094d89;
+            stroke-dasharray: 10,5;
+        }
+        .big-cloud {
+            fill: #ffffffb1;
+        }
+        .light-grass {
+            fill: rgb(27, 99, 27);
+        }
+    }
+    &.thunderstorm {
+        #Sun-rainy,
+        #rain,
+        #Clouds-rainy,
+        #Clouds-thunder,
         #Lightning {
             display: block
         }
         .sky {
-            fill: rgb(67, 105, 177);
-            stroke: black;
+            fill: #0a3689; 
         }
-        .st0,
         .sun,
         .lightning {
             fill: #e18625;
@@ -499,65 +452,14 @@ height: 100%;
             stroke-miterlimit: 10;
         }
         .rain {
-            fill: #000;
-            stroke: #000;
-            stroke-width: 2;
+            stroke-width: 3;
             stroke-dasharray: 10,5;
         }
-        .st1 {
-            fill: #53570a;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .big-cloud {
+            fill: #444;
         }
-        .st2 {
-            fill: #70510d;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st3 {
-            fill: #fcfbed;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st4 {
-            fill: #927b75;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st5 {
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st6 {
-            fill: #ffffff;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st7 {
-            fill: none;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .light-grass {
+            fill: rgb(94, 94, 10);
         }
     }
     &.fog {
@@ -569,132 +471,64 @@ height: 100%;
         }
         .sky,
         .wind {
-            fill: rgb(140, 154, 165);
-            stroke: #000;
+            fill: #7794ab;
         }
-        .st1,
-        .st3,
-        .st4,
-        .st6 {
-        fill: #707b75;
-        stroke: #000;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
+        .sun {
+            fill: #dcaf5c93;
         }
         .clouds {
-        fill: #ccc;
+        fill: rgba(213, 213, 213, 0.256);
         stroke: #2c3e50;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
         }
-        .st2,
-        .st3,
-        .st4,
-        .st6 {
-        fill: #a7c5ce;
+        .big-cloud {
+        fill: rgba(193, 193, 193, 0.229);
+        stroke: #2c3e50;
         }
-        .snow {
-        fill: #fff;
+        .small-cloud {
+        fill: rgba(111, 97, 97, 0.256);
+        stroke: #2c3e50;
         }
-        .st3,
-        .st4,
-        .st6 {
-        fill: #679e4a;
+        .wind {
+        fill: rgba(111, 97, 97, 0.256);
+        stroke: #2c3e50;
         }
-        .st4,
-        .st6 {
-        fill: #686510;
+        .light-grass,
+        .dark-grass,
+        .tree-branches,
+        .house,
+        .tree-trunk,
+        .roof,
+        .bush,
+        .door,
+        .window, {
+            opacity: 0.2
         }
-    }
 
-    /* mist */
+    }
     &.mist {
         #Sun-rainy,
+        #rain,
         #Clouds-rainy {
             display: block
         }
         .sky {
-            fill: #70a4f2;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+            fill: #839ec6;
         }
         .sun {
-            fill: rgba(255, 132, 0, 0.665);
-            stroke: #001;
+            fill: #d2c000ae;
         }
         .rain {
-            stroke: rgb(12, 107, 196);
+            stroke: #0c6bc4;
             stroke-dasharray: 3, 3;
         }
-        .st0 {
-            fill: #d0c5bc;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .big-cloud {
+            fill: #ffffffc7;
         }
-        .st1 {
-            fill: #679e4a;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .light-grass {
+            fill: rgb(33, 104, 33);
         }
-        .st2 {
-            fill: #69af7e;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st3 {
-            fill: #fcfbed;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st4 {
-            fill: #ccf5fa;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st5 {
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st6 {
-            fill: #ffffff;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
-        }
-        .st7 {
-            fill: none;
-            stroke: #000000;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 10;
+        .dark-grass {
+            fill: rgb(32, 81, 32);
         }
     }
 }
