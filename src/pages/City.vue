@@ -5,11 +5,12 @@
         {{ item.content }}
       </div> -->
       <DateTime :data="tiles.datetime"/>
-      <Animation :data="tiles.weather" />
+      <Animation :data="tiles.weather" :weatherStyles="weatherStyles" />
       <Temperature :data="tiles.temperature"/>
       <Location :data="tiles.location"/>
       <Description :data="tiles.description"/>
       <Nav :data="tiles.nav" :changeCity="this.changeCity"/>
+      <Search :data="tiles.search" :changeCity="this.changeCity"/>
     </div>
   </div>
 </template>
@@ -21,14 +22,14 @@ import Temperature from '@/components/Temperature'
 import Location from '@/components/Location'
 import Description from '@/components/Description'
 import Nav from '@/components/Nav'
+import Search from '@/components/Search'
 
 export default {
   name: 'Main',
-  components: { DateTime, Animation, Temperature, Location, Description, Nav },
+  components: { DateTime, Animation, Temperature, Location, Description, Nav, Search },
   data () {
     return {
-      greetingmsg: 'Welcome to Weatherly!',
-      currentCity: 'Stockholm',
+      currentCity: this.$route.params.cityName,
       tiles: {
         datetime: {
           title: 'leftTop',
@@ -39,6 +40,7 @@ export default {
         },
         weather: {
           title: 'center',
+          raw: '',
           content: ''
         },
         temperature: {
@@ -63,6 +65,9 @@ export default {
             'London',
             'Beijing'
           ]
+        },
+        search: {
+          title: 'searchBar'
         }
       },
       apiData: {}
@@ -71,7 +76,7 @@ export default {
   methods: {
     fetchData () {
       let self = this
-      let api = `https://api.openweathermap.org/data/2.5/find?q=${this.currentCity}&units=metric&appid=dfe15a41201d660911d013203832e676`
+      let api = `https://api.openweathermap.org/data/2.5/find?q=${this.$route.params.cityName}&units=metric&appid=dfe15a41201d660911d013203832e676`
       fetch(api).then(function (response) {
         return response.json()
       }).then(function (result) {
@@ -79,15 +84,25 @@ export default {
         self.tiles.location.content = result.list[0].name
         self.tiles.temperature.content = Math.floor(result.list[0].main.temp)
         self.tiles.description.content = result.list[0].weather[0].description
-        self.tiles.weather.content = result.list[0].weather[0].description
-        self.tiles.datetime.content.date = result.list[0].dt
-        self.tiles.datetime.content.time = result.list[0].dt
+        self.tiles.weather.raw = result.list[0].weather[0].description
+        self.tiles.datetime.content.date = Date.now()
       })
     },
     changeCity (city) {
       let self = this
       self.currentCity = city
       this.fetchData()
+    }
+  },
+  computed: {
+    weatherStyles: function () {
+      const possibleConditions = ['clear', 'cloud', 'broken', 'rain', 'light', 'heavy', 'few', 'shower', 'haze', 'snow', 'fog', 'mist']
+      let actualConditions = ['weather']
+      const raw = this.tiles.weather.raw.toLowerCase()
+      possibleConditions.forEach(function (item) {
+        raw.includes(item) && actualConditions.push(item)
+      })
+      return actualConditions
     }
   },
   mounted () {

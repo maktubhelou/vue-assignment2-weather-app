@@ -1,14 +1,32 @@
 <template>
     <div :class="['tile', data.title]">
-        {{ data.content.date }}
-        {{ data.content.time }}
+        <!-- @ TODO display correct timezone -->
+        {{ data | moment("dddd, MMMM Do") }}
+        {{ date | moment("hh:mm:ss") }}
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
+
+Vue.use(require('vue-moment'))
+
 export default {
   name: 'DateTime',
-  props: [ 'data' ]
+  props: [ 'data' ],
+  data () {
+    return {
+      date: new Date()
+    }
+  },
+  methods: {
+    setDate () {
+      this.date = new Date()
+    },
+    getDate () {
+      setInterval(this.setDate, 1000)
+    }
+  }
 }
 </script>
 

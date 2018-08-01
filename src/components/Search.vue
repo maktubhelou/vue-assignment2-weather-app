@@ -1,10 +1,8 @@
 <template>
     <div :class="['tile', data.title]">
-        <router-link tag="div" class="navItem" to="/about">
-          <a>About</a>
-        </router-link>
-        <div class="navItem" v-for="item in data.content" :key="item">
-          <router-link :to="{ path: `${item}` }">{{ item }}</router-link>
+        <div class="search">
+          <input placeholder="city..." v-model="link">
+          <router-link tag="button" :to="{ path: `${link}` }">Go!</router-link>
         </div>
     </div>
 </template>

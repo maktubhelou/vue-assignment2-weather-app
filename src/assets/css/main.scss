@@ -3,7 +3,7 @@
     --fgcolor: rgba(25, 25, 25, 0);
     --left-top-font: 4vw;
     --left-bottom-font: 4vw;
-    --right-top-font: 12vw;
+    --right-top-font: 10vw;
     --right-bottom-font: 4vw;
 }
 
@@ -18,12 +18,12 @@ html, body {
 .grid {
     display: grid;
     position: absolute;
-    grid-template: repeat(2, 2fr) 1fr / 0.5fr 2fr 0.5fr;
+    grid-template: repeat(2, 2fr) 0.3fr 0.7fr / 1fr 2fr 1fr;
     width: 100%;
     height: 100%;
     .tile {
         background-color: var(--bgcolor);
-        padding: 2vw;
+        padding: 1vw;
     }
     .leftTop {
         display: flex;
@@ -39,9 +39,8 @@ html, body {
         justify-content: center;
         align-items: center;
         grid-area: span 2 / span 1;
-        font-size: var(--center-font);
         img {
-            width: 100%;
+            width: 110%;
             height: 100%;
         }
     }
@@ -85,6 +84,17 @@ html, body {
             }
         }
     }
+    .searchBar {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        justify-content: center;
+        .search {
+            padding: 2vw;
+            cursor: pointer;
+        }
+    }
 }
 
 #app {
@@ -95,3 +105,502 @@ html, body {
     color: #2c3e50;
   }
 
+svg {
+width: 100%;
+height: 100%;
+}
+
+#Clouds-cloudy,
+#Clouds-rainy,
+#Clouds-snowy,
+#Snow,
+#Sun-rainy,
+#Sun-snowy,
+#Lightning,
+#Sun-Bright,
+#Sun-Cloudy,
+#Sun-snow,
+#Sun-rainy,
+#Wind-cloudy,
+#Clouds-sunny, {
+    display: none,
+}
+.weather {
+    .sky {
+        fill: #9fbeee;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st0 {
+        fill: #d19f78;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st1 {
+        fill: #8ca57f;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st2 {
+        fill: #8aac94;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st3 {
+        fill: #fcfbed;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st4 {
+        fill: #ecc5bb;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st5 {
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st6 {
+        fill: #ffffff;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    .st7 {
+        fill: none;
+        stroke: #000000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+    /* Sunny */
+    &.clear {
+        #Sun-Bright {
+            display: block
+        }
+        .sky {
+            fill: #70a4f2;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st0 {
+            fill: #d5640d;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st1 {
+            fill: #679e4a;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st2 {
+            fill: #69af7e;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st3 {
+            fill: #fcfbed;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st4 {
+            fill: #f27e5f;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st5 {
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st6 {
+            fill: #ffffff;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st7 {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    }
+    /* Partly Cloudy */
+    &.partly-cloudy {
+        #Sun-Cloudy,
+        #Clouds-cloudy,
+        #Wind-cloudy {
+            display: block
+        }
+        .sky,
+        .wind {
+            fill: #8a9cb8;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st0 {
+            fill: #996f4f;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st1 {
+            fill: #486f33;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st2 {
+            fill: #33553d;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st3,
+        .clouds {
+            fill: #fcfbed;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st4,
+        .sun {
+            fill: #f27e5f;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st5 {
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st6 {
+            fill: #ffffff;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st7 {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    }
+    /* Sunny with Few Clouds */
+    &.cloud {
+        #Sun-Bright,
+        #Clouds-sunny {
+            display: block
+        }
+        .sky {
+            fill: #70a4f2;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st0 {
+            fill: #d5640d;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st1 {
+            fill: #679e4a;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st2 {
+            fill: #69af7e;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st3 {
+            fill: #fcfbed;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st4 {
+            fill: #f27e5f;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st5 {
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st6 {
+            fill: #ffffff;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st7 {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    }
+    /* Snowy */
+    &.snow {
+        #Snow,
+        #Sun-snowy,
+        #Clouds-snowy {
+            display: block;
+        }
+        .sky {
+            fill: rgb(136, 175, 206);
+            stroke: #000;
+        }
+        .st1,
+        .st2,
+        .st3,
+        .st4,
+        .st6 {
+        fill: #a0aca6;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        }
+        .st2,
+        .st3,
+        .st4,
+        .st6 {
+        fill: #b7dbe6;
+        }
+        .snow {
+        fill: #fff;
+        }
+        .st3,
+        .st4,
+        .st6 {
+        fill: #679e4a;
+        }
+        .st4,
+        .st6 {
+        fill: #686510;
+        }
+    }
+    /* Clouds and Rain */
+    &.rain {
+        #Sun-rainy,
+        #Clouds-rainy,
+        #Lightning {
+            display: block
+        }
+        .sky {
+            fill: rgb(67, 105, 177);
+            stroke: black;
+        }
+        .st0,
+        .sun,
+        .lightning {
+            fill: #e18625;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st1 {
+            fill: #53570a;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st2 {
+            fill: #70510d;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st3 {
+            fill: #fcfbed;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st4 {
+            fill: #927b75;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st5 {
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st6 {
+            fill: #ffffff;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+        .st7 {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    }
+    &.fog {
+        #Sun-snowy,
+        #Clouds-cloudy,
+        #Wind-cloudy,
+        #Clouds-snowy {
+            display: block;
+        }
+        .sky,
+        .wind {
+            fill: rgb(140, 154, 165);
+            stroke: #000;
+        }
+        .st1,
+        .st3,
+        .st4,
+        .st6 {
+        fill: #707b75;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        }
+        .clouds {
+        fill: #ccc;
+        stroke: #2c3e50;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        }
+        .st2,
+        .st3,
+        .st4,
+        .st6 {
+        fill: #a7c5ce;
+        }
+        .snow {
+        fill: #fff;
+        }
+        .st3,
+        .st4,
+        .st6 {
+        fill: #679e4a;
+        }
+        .st4,
+        .st6 {
+        fill: #686510;
+        }
+    }
+}
