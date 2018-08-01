@@ -22,6 +22,49 @@
                     <circle id="XMLID_98_" cx="646" cy="367" r="50" class="sun"/>
                     </g>
                 </g>
+            <g id="House-and-Trees">
+            <path id="bush" d="M808 560v-5a22 22 0 0 0-27-22 20 20 0 0 0-30-16 25 25 0 0 0-48 7v36h105z" class="st1"/>
+            <path id="house-frame" fill="#fcfbed" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M589 496h129v65H589z"/>
+            <path id="roof" d="M589 496l66-45 63 45z" class="st4"/>
+            <path id="window-left" d="M612 517h15v15h-15z" class="st0"/>
+            <path id="window-right" d="M640 517h16v15h-16z" class="st0"/>
+            <path id="door" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M682 530h14v30h-14z"/>
+            <path id="tree-brances" d="M579 498h-1a21 21 0 0 0-12-37h-1l2-9c0-11-10-20-21-20h-9c-11 0-20 9-20 20l2 9h-2c-11 0-20 8-20 19-1 8 3 14 9 18h-1c-10 0-19 7-21 17-2 13 8 24 20 24h75c13 0 22-11 20-24-1-10-10-17-20-17z" class="st1"/>
+            <path id="tree-trunk" d="M564 520l-11 9v-9h-6v14l-5 5h-6v21h15v-20l18-15z" class="st0"/>
+            </g>
+            <g id="rain">
+                <g id="rain-right">
+                        <path id="XMLID_96_" d="M621 405l-75 195" class="rain"/>
+                        <path id="XMLID_95_" d="M596 426l-67 174" class="rain"/>
+                        <path id="XMLID_94_" d="M579 426l-67 174" class="rain"/>
+                        <path id="XMLID_93_" d="M639 405l-75 195" class="rain"/>
+                        <path id="XMLID_92_" d="M657 405l-75 195" class="rain"/>
+                        <path id="XMLID_91_" d="M675 405l-75 195" class="rain"/>
+                        <path id="XMLID_90_" d="M693 405l-75 195" class="rain"/>
+                        <path id="XMLID_89_" d="M711 405l-75 195" class="rain"/>
+                        <path id="XMLID_88_" d="M729 405l-75 195" class="rain"/>
+                        <path id="XMLID_87_" d="M747 405l-75 195" class="rain"/>
+                        <path id="XMLID_86_" d="M765 405l-74 195" class="rain"/>
+                        <path id="XMLID_85_" d="M783 405l-74 195" class="rain"/>
+                        <path id="XMLID_84_" d="M801 405l-74 195" class="rain"/>
+                        <path id="XMLID_83_" d="M819 405l-74 195" class="rain"/>
+                    </g>
+                <g id="rain-left">
+                        <path id="XMLID_78_" d="M272 405l-75 195" class="rain"/>
+                        <path id="XMLID_77_" d="M255 405l-63 163" class="rain"/>
+                        <path id="XMLID_76_" d="M290 405l-75 195" class="rain"/>
+                        <path id="XMLID_75_" d="M308 405l-75 195" class="rain"/>
+                        <path id="XMLID_74_" d="M326 405l-75 195" class="rain"/>
+                        <path id="XMLID_73_" d="M344 405l-75 195" class="rain"/>
+                        <path id="XMLID_72_" d="M362 405l-75 195" class="rain"/>
+                        <path id="XMLID_71_" d="M380 405l-74 195" class="rain"/>
+                        <path id="XMLID_70_" d="M398 405l-74 195" class="rain"/>
+                        <path id="XMLID_69_" d="M416 405l-74 195" class="rain"/>
+                        <path id="XMLID_68_" d="M434 405l-74 195" class="rain"/>
+                        <path id="XMLID_65_" d="M452 405l-74 195" class="rain"/>
+                        <path id="XMLID_64_" d="M470 405l-74 195" class="rain"/>
+            </g>
+        </g>
         <g id="Foreground">
             <g id="ground-main">
             <g id="ground">
@@ -34,16 +77,6 @@
                 <path id="XMLID_38_" d="M808 560H192c4 19 9 37 17 55l599-55z" class="st2"/>
                 </g>
             </g>
-            </g>
-            <g id="House-and-Trees">
-            <path id="bush" d="M808 560v-5a22 22 0 0 0-27-22 20 20 0 0 0-30-16 25 25 0 0 0-48 7v36h105z" class="st1"/>
-            <path id="house-frame" fill="#fcfbed" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M589 496h129v65H589z"/>
-            <path id="roof" d="M589 496l66-45 63 45z" class="st4"/>
-            <path id="window-left" d="M612 517h15v15h-15z" class="st0"/>
-            <path id="window-right" d="M640 517h16v15h-16z" class="st0"/>
-            <path id="door" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M682 530h14v30h-14z"/>
-            <path id="tree-brances" d="M579 498h-1a21 21 0 0 0-12-37h-1l2-9c0-11-10-20-21-20h-9c-11 0-20 9-20 20l2 9h-2c-11 0-20 8-20 19-1 8 3 14 9 18h-1c-10 0-19 7-21 17-2 13 8 24 20 24h75c13 0 22-11 20-24-1-10-10-17-20-17z" class="st1"/>
-            <path id="tree-trunk" d="M564 520l-11 9v-9h-6v14l-5 5h-6v21h15v-20l18-15z" class="st0"/>
             </g>
             </g>
             <g id="CloudPatterns">
@@ -160,42 +193,13 @@
                 </g>
                 <g id="Clouds-rainy">
                     <g id="XMLID_22_">
-                    <g id="XMLID_82_">
-                        <path id="XMLID_96_" d="M621 405l-75 195" class="st3"/>
-                        <path id="XMLID_95_" d="M596 426l-67 174" class="st3"/>
-                        <path id="XMLID_94_" d="M579 426l-67 174" class="st3"/>
-                        <path id="XMLID_93_" d="M639 405l-75 195" class="st3"/>
-                        <path id="XMLID_92_" d="M657 405l-75 195" class="st3"/>
-                        <path id="XMLID_91_" d="M675 405l-75 195" class="st3"/>
-                        <path id="XMLID_90_" d="M693 405l-75 195" class="st3"/>
-                        <path id="XMLID_89_" d="M711 405l-75 195" class="st3"/>
-                        <path id="XMLID_88_" d="M729 405l-75 195" class="st3"/>
-                        <path id="XMLID_87_" d="M747 405l-75 195" class="st3"/>
-                        <path id="XMLID_86_" d="M765 405l-74 195" class="st3"/>
-                        <path id="XMLID_85_" d="M783 405l-74 195" class="st3"/>
-                        <path id="XMLID_84_" d="M801 405l-74 195" class="st3"/>
-                        <path id="XMLID_83_" d="M819 405l-74 195" class="st3"/>
-                    </g>
                     <path id="XMLID_81_" d="M538 336c3-11 12-16 22-16l11 2c4 2 7 1 9-2 6-9 17-14 28-14 18 0 32 12 34 30H538z" class="st4"/>
                     <g id="XMLID_79_">
                         <path id="XMLID_80_" d="M444 216c-13 0-25 6-32 15-4 5-10 7-16 6l-6-1c-8 0-14 4-19 9-4-3-9-5-14-5-10 0-19 7-21 17h148c0-23-18-41-40-41z" class="st4"/>
                     </g>
-                    <path id="XMLID_78_" d="M272 405l-75 195" class="st3"/>
-                    <path id="XMLID_77_" d="M255 405l-63 163" class="st3"/>
-                    <path id="XMLID_76_" d="M290 405l-75 195" class="st3"/>
-                    <path id="XMLID_75_" d="M308 405l-75 195" class="st3"/>
-                    <path id="XMLID_74_" d="M326 405l-75 195" class="st3"/>
-                    <path id="XMLID_73_" d="M344 405l-75 195" class="st3"/>
-                    <path id="XMLID_72_" d="M362 405l-75 195" class="st3"/>
-                    <path id="XMLID_71_" d="M380 405l-74 195" class="st3"/>
-                    <path id="XMLID_70_" d="M398 405l-74 195" class="st3"/>
-                    <path id="XMLID_69_" d="M416 405l-74 195" class="st3"/>
-                    <path id="XMLID_68_" d="M434 405l-74 195" class="st3"/>
                     <g id="XMLID_66_">
                         <path id="XMLID_67_" d="M510 380a78 78 0 0 0-154-18 65 65 0 0 0-73 13c-7 7-17 9-26 6a43 43 0 0 0-55 24h304c3-8 4-16 4-25z" class="st4"/>
                     </g>
-                    <path id="XMLID_65_" d="M452 405l-74 195" class="st3"/>
-                    <path id="XMLID_64_" d="M470 405l-74 195" class="st3"/>
                     <path id="XMLID_63_" d="M839 442a92 92 0 1 0-166-46c-8-3-15-4-24-4-18 0-35 7-47 20-9 9-21 12-33 10l-8-1c-15 0-29 9-36 21h314z" class="st4"/>
                     <g id="XMLID_60_">
                         <path id="XMLID_62_" d="M399 387c-17 0-32 7-42 19-4 5-12 8-19 7a34 34 0 0 0-27 8c-4 3-9 4-14 3l-6-1c-11 0-21 8-23 19h186c-1-30-25-55-55-55z" class="st4"/>
@@ -216,22 +220,24 @@ export default {
   mounted () {
     // this.getDate()
     let cloudTl = new TimelineMax()
-    cloudTl.from('#Clouds-cloudy', 2, { opacity: 0 })
-    cloudTl.from('#Clouds-rainy', 2, { opacity: 0 })
+    cloudTl.from('#Clouds-cloudy', 1, { opacity: 0 })
+    cloudTl.from(['#rain', '#Clouds-rainy', '#Lightning'], 1, { opacity: 0 })
+
+    let rain = new TimelineMax()
+    rain.fromTo(['#rain'], 1, { 'stroke-dashoffset': 50, ease: Power0.easeNone }, { 'stroke-dashoffset': -50, ease: Power0.easeNone } )
+    rain.repeat(-1)
+
+    let clouds = new TimelineMax()
+    clouds.fromTo(['#CloudPatterns'], 2, {x: -20}, {x: 20})
+    clouds.yoyo(true)
+    clouds.repeat(-1)
 
     let sunTl = new TimelineMax()
-    sunTl.from('#Sun', 6, { 
+    sunTl.from('#Sun', 6, {
       rotation: -360,
-      transformOrigin: "500px 500px",
+      transformOrigin: '500px 500px'
     }, 0)
     sunTl.repeat(-1)
-
-    let minuteHandTimeLine = new TimelineMax()
-    minuteHandTimeLine.to('#minute-hand', 6, {
-      rotation: 360, 
-      transformOrigin: "0% 0%",
-      ease: Power0.easeNone
-    }, 0)
   }
 }
 
